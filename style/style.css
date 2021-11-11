@@ -4,12 +4,24 @@
     }
 
 main {
-    display: flex;
-    justify-content: space-around;
+  color: red;
+    /* display: flex;
+    justify-content: space-around; */
 }
 
-svg {
+/* svg {
     width: 200px;
     height: 200px;
-}
+} */
 
+
+rect {
+    fill: steelblue;
+    fill-opacity: 0.8;
+  }
+  rect:hover {
+    fill-opacity: 1;
+  }
+  .axis {
+    font-size: smaller;
+  }

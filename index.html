@@ -5,17 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frontend Data</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
     <main>
-        <p>test</p>
-        <svg>
+        <h1>Data visualisatie - Frontend Data</h1>
+        <!-- <svg>
             <circle cx="50"  cy="50" r="40" stroke="red" stroke-width="5" fill="blue"/>
             <rect width="100" height="50" rx="20" />
         
+        </svg> -->
+        <h2>Oefening SVG voor mijzelf</h2>
+        <svg class="mikcyMouse" viewBox="0 0 100 100">
+            <circle class="gezicht" cx="70" cy="70" r="20" fill="#323232" />
+            <circle class="linkeOor" cx="50" cy="55" r="10" fill="black" />
+            <circle class="rechterOor" cx="90" cy="55" r="10" fill="black" />
+            <ellipse class="linkerOog" cx="60" cy="68" ry="5" rx="4" fill="white" />
+            <ellipse class="linkerPupil" cx="61" cy="70" ry="4" rx="3" fill="black" />
+            <ellipse class="rechterOog" cx="78" cy="68" ry="5" rx="4" fill="white" />
+            <ellipse class="rechterPupil" cx="77" cy="70" ry="4" rx="3" fill="black" />
+            <rect class="mouth" x="59" y="77" width="20" height="7"/>
+            
+            <!-- 
+                CX = het x-coordinaat van het midden van de ellipse
+                CY = het y-coordinaat van het midden van de ellipse
+                RX = horizontale radius
+                RY = verticale radius
+                 
+            -->
+
+
         </svg>
-        <p>test</p>
-        <p>test 2222</p>
+        
     </main>
 </body>
+
+<script src="scripts/script.js"></script>
+
 </html>
