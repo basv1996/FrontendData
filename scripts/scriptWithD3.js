@@ -66,5 +66,13 @@ function updateMe(new_data) {
     d.name)
   }
 
+  d3.select('.more-than-x-percentage').on('change'), function() {
+      // This will be triggered when the user selects or unselects the checkbox
+  const checked = d3.select(this).property('checked');
+  if (checked === true) {
+    // Checkbox was just checked
+    console.log("checked")
+  }
+
 
 
