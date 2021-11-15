@@ -15,6 +15,12 @@ const beer_height = 50;
   const g = svg.append('g')
               .attr('transform', `translate(${margin.left},${margin.top})`)
 
+const xScale = d3.scaleLinear().range([0,100])
+const yScale = d3.scaleBand().range([0,100])
+
+const xaxis = d3.axisTop().scale(xscale);
+const yaxis = d3.axisLeft().scale(yscale);
+
 d3.json('https://api.punkapi.com/v2/beers?page=2&per_page=10').then((json) => {
 data = json
 // console.log(json)
@@ -56,10 +62,14 @@ function updateMe(new_data) {
     (exit) => exit.remove()
     );
 
-    rect.transition()
+    rect
+    .transition()
+    
     .attr('height', beer_height)
     .attr('width', (d) => d.abv * 7)
+    
     .attr('y', (d, i) => i*(beer_height+5))
+    .duration(1000)
 
     rect.select('title')
     .text((d) => 
