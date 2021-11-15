@@ -14,6 +14,10 @@ main {
     height: 200px;
 } */
 
+svg.beer{
+    width: 200px;
+}
+
 
 rect {
     fill: steelblue;
