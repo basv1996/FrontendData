@@ -15,11 +15,21 @@ const beer_height = 50;
   const g = svg.append('g')
               .attr('transform', `translate(${margin.left},${margin.top})`)
 
-const xScale = d3.scaleLinear().range([0,100])
-const yScale = d3.scaleBand().range([0,100])
+const xScale = d3.scaleLinear()
+.range([0,width]).domain([0, 20]) 
+//maak een scale met een domein van 0 tot 10 (10 stappen op een range van ...) en een range van 0 tot 100. 
+//In dit geval zou een range van 5 een output geven van 50
 
-const xaxis = d3.axisTop().scale(xscale);
-const yaxis = d3.axisLeft().scale(yscale);
+
+const yScale = d3.scaleBand()
+.rangeRound([0, height])
+.paddingInner(0.1)
+
+
+const xaxis = d3.axisTop().scale(xScale)
+const drawXaxis = g.append('g')
+const yaxis = d3.axisLeft().scale(yScale)
+const drawYaxis = g.append('g')
 
 d3.json('https://api.punkapi.com/v2/beers?page=2&per_page=10').then((json) => {
 data = json
@@ -42,6 +52,12 @@ updateMe(data)
 }) 
 
 function updateMe(new_data) {
+    //maak de assen
+  drawXaxis.transition().call(xaxis);
+  drawYaxis.transition().call(yaxis);
+
+  //
+  
     // DATA JOIN
   const rect = g
   .selectAll('rect')
