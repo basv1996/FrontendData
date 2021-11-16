@@ -1,7 +1,7 @@
 # Front-end data
 
 ## App Interface
-![Interface van de app](https://github.com/basv1996/FunctionalProgramming/blob/main/wiki_Img/BarChartWithAxes.png)
+![Interface van de app](https://github.com/basv1996/FrontendData/blob/main/wiki_Img/BarChartWithAxes.png)
 
 ### Link naar de app
 :globe_with_meridians: [Link naar live app](https://fd-tt-basv.netlify.app/) 
@@ -52,15 +52,6 @@ Tijdens het vak Frontend data worden we beoordeld op de volgende punten:
 - Kwaliteit
 - Proces
 
-
-### Week 1 - Data Cleaning 🧹
-
-**Goal**: Leren hoe je data kan showen en opschonen met functional programming   
-In week 1 heb ik geleerd hoe functional programming in zijn werk gaat. Tevens heb ik geleerd hoe je door middel van een fetch de data uit een json bestand kan ophalen(renderen).   
-
-### Week 2 - Werken met externe API 📊
-**Goal**: Data van een externe API renderen en opschonen 
-Ik heb deze week geleerd hoe je een externe API kan gebruiken.  
 
 </details>
 

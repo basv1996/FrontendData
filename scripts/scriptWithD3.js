@@ -29,7 +29,7 @@ const yScale = d3.scaleBand()
 .paddingInner(0.1)
 
 
-const xaxis = d3.axisTop().scale(xScale)
+const xaxis = d3.axisTop().scale(xScale) // De cijfers worden aan de bovenkant van de x-as geplaatst
 const drawXaxis = g.append('g').attr("class", "x-as") // teken een x as
 
 const yaxis = d3.axisLeft().scale(yScale)
@@ -107,7 +107,7 @@ function updateMe(new_data) {
     .ease(d3.easeBounceOut)
     //.delay(1000)
     .duration(1000)
-    .attr('height', yScale.bandwidth())
+    .attr('height', yScale.bandwidth() )
     .attr('width', (d) => xScale(d.abv) )
     .attr('y', (d) => yScale(d.name))
 
