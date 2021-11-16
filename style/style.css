@@ -4,23 +4,17 @@
     }
 
 main {
-  color: red;
-    /* display: flex;
-    justify-content: space-around; */
+  color: red;   
 }
 
-/* svg {
-    width: 200px;
-    height: 200px;
-} */
 
-svg.beer{
-    width: 200px;
+svg {
+  margin-left: 100px;
 }
 
 
 rect {
-    fill: steelblue;
+    fill: #f28e1c;
     fill-opacity: 0.8;
   }
   rect:hover {
