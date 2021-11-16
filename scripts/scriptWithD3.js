@@ -52,12 +52,28 @@ updateMe(data)
 }) 
 
 function updateMe(new_data) {
-    //maak de assen
-  drawXaxis.transition().call(xaxis);
-  drawYaxis.transition().call(yaxis);
 
-  //
+     // update de schalen
+  xScale
+  .domain([0, d3.max(new_data, (d) => 
+    d.abv)])
+
+  yScale
+  .domain(new_data.map((d) =>
+   d.name))
+   
   
+  //maak de assen
+  drawXaxis
+  .transition()
+  .call(xaxis)
+
+  drawYaxis
+  .transition()
+  .call(yaxis)
+
+ 
+
     // DATA JOIN
   const rect = g
   .selectAll('rect')
@@ -80,16 +96,18 @@ function updateMe(new_data) {
 
     rect
     .transition()
+    //.duration(1000)
+    .attr('height', yScale.bandwidth())
+    .attr('width', (d) => xScale(d.abv) )
+    .attr('y', (d) => yScale(d.name))
     
-    .attr('height', beer_height)
-    .attr('width', (d) => d.abv * 7)
     
-    .attr('y', (d, i) => i*(beer_height+5))
-    .duration(1000)
+    
 
     rect.select('title')
     .text((d) => 
     d.name)
+
   }
 
   d3.select('#alcoholPercentage').on('change', 
