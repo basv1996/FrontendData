@@ -19,6 +19,7 @@ rect {
   }
   rect:hover {
     fill-opacity: 1;
+    cursor: pointer;
   }
   .axis {
     font-size: smaller;

@@ -1,7 +1,8 @@
 # Front-end data
 
 ## App Interface
-![Interface van de app](https://github.com/basv1996/FrontendData/blob/master/wiki_Img/BarChartWithAxes.png)
+![Interface van de app](https://github.com/basv1996/FrontendData/blob/master/wiki_img/BarChartWithAxes.png)
+
 
 
 
@@ -40,7 +41,7 @@ $ git clone https://github.com/basv1996/FrontendData.git
 Welke data heb ike gebruikt?
 
 Ik heb een API gebruikt die allemaal verschillende biertjes heeft. Van de data heb ik de naam en het alcohol percentage van het bier gepakt en deze in een bar chart gestopt. 
-![Ruwe dataset](https://github.com/basv1996/FrontendData/blob/master/wiki_Img/Dataset_raw.png)
+![Ruwe dataset](https://github.com/basv1996/FrontendData/blob/master/wiki_img/Dataset_raw.png)
 
 
 

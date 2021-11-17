@@ -2,7 +2,7 @@
 
 // https://pokeapi.co/api/v2/pokemon?limit=100&offset=0
 
-const margin = {top: 40, bottom: 40, left: 150, right: 20};
+const margin = {top: 40, bottom: 10, left: 150, right: 20};
 const width = 800 - margin.left - margin.right;
 const height = 600 - margin.top - margin.bottom;
 
@@ -16,22 +16,20 @@ const height = 600 - margin.top - margin.bottom;
               .attr('transform', `translate(${margin.left},${margin.top})`)
               // transformeer de getekende chart en verplaats hem x stappen van links en x stappen van de top (in dit geval 150 en 40)
 
-const xScale = d3.scaleBand()
-.range([ 0, width ])
-.domain([0,100])
-.padding(0.2); 
+const xScale = d3.scaleLinear()
+.range([0,width]).domain([0, 20]) 
 
 
 //maak een scale met een domein van 0 tot 10 (10 stappen op een range van ...) en een range van 0 tot 100. 
 //In dit geval zou een range van 5 een output geven van 50
 
 
-const yScale = d3.scaleLinear()
-.domain([0, 13000])
-.range([ height, 0])
+const yScale = d3.scaleBand()
+.rangeRound([0, height])
+.paddingInner(0.1)
 
 
-const xaxis = d3.axisBottom().scale(xScale) // De cijfers worden aan de bovenkant van de x-as geplaatst
+const xaxis = d3.axisTop().scale(xScale) // De cijfers worden aan de bovenkant van de x-as geplaatst
 const drawXaxis = g.append('g').attr("class", "x-as") // teken een x as
 
 const yaxis = d3.axisLeft().scale(yScale)
@@ -60,27 +58,24 @@ updateMe(data)
 function updateMe(new_data) {
 
      // update de schalen
-  yScale
+  xScale
   .domain([0, d3.max(new_data, (d) => 
     d.abv)])
 
-  xScale
+  yScale
   .domain(new_data.map((d) =>
    d.name))
-   
    
    
   
   //maak de assen
   drawXaxis
-  .attr('transform', 'translate(0,' + height + ')')
   .transition()
   .call(xaxis)
 
   drawYaxis
   .transition()
   .call(yaxis)
-  
   
 
 
@@ -114,11 +109,10 @@ function updateMe(new_data) {
     .ease(d3.easeBounceOut)
     //.delay(1000)
     .duration(1000)
-    .attr("x", (d) => xScale(d.name))
-    .attr("y", (d) => yScale(d.abv))
-    .attr("width", xScale.bandwidth())
-    .attr("height", (d) => height -yScale(d.abv))
-    
+    .attr('height', yScale.bandwidth() )
+    .attr('width', (d) => xScale(d.abv) )
+    .attr('y', (d) => yScale(d.name))
+
     
     rect.select('title')
     .text((d) => 

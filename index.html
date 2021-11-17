@@ -12,7 +12,7 @@
     <main>
         <h1>Data visualisatie - Frontend Data</h1>
         <h2>Krijg een willekeurig biertje</h2>
-        <div>
+        <!-- <div>
   <strong>Filter:</strong>
   <label>
       <input type="checkbox" id="alcoholPercentage" />
@@ -23,10 +23,20 @@
     <label>
         <input type="checkbox" id="alcoholPercentageMinder" />
         Minder dan 5% Alcohol</label>
+  </div> -->
+
+  <div>
+    <input type="radio" id="alcoholPercentage" value="Boven de 5%">
+    <label for="boevn5%">Biertjes met meer dan 5% Alcohol</label><br>
+    <input type="radio" id="alcoholPercentageMinder" value="minder dan 5%">
+    <label for="minder">Minder dan 5%</label><br>
   </div>
+  <div id="my_dataviz"></div>
         
     </main>
 </body>
 <!-- <script src="scripts/script.js"></script> -->
 <script src="scripts/scriptWithD3.js"></script>
+<!-- <script src="scripts/scriptWithD3_2.js"></script> -->
+
 </html>
