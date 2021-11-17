@@ -1,7 +1,7 @@
 # Front-end data
 
 ## App Interface
-![Interface van de app](https://github.com/basv1996/FrontendData/blob/master/wiki_img/BarChartWithAxes.png)
+![Interface van de app](https://github.com/basv1996/FrontendData/blob/master/wiki_img/Interface_barchart.png)
 
 
 

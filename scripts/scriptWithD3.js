@@ -2,7 +2,7 @@
 
 // https://pokeapi.co/api/v2/pokemon?limit=100&offset=0
 
-const margin = {top: 40, bottom: 40, left: 150, right: 20};
+const margin = {top: 40, bottom: 140, left: 150, right: 20};
 const width = 800 - margin.left - margin.right;
 const height = 600 - margin.top - margin.bottom;
 
@@ -37,7 +37,7 @@ const drawXaxis = g.append('g').attr("class", "x-as") // teken een x as
 const yaxis = d3.axisLeft().scale(yScale)
 const drawYaxis = g.append('g').attr("class", "y-as") //teken een y as
 
-d3.json('https://api.punkapi.com/v2/beers?page=2&per_page=10').then((json) => {
+d3.json('https://api.punkapi.com/v2/beers?page=1&per_page=11').then((json) => {
 data = json
  console.log(json)
 // console.log(json.Object)
@@ -67,15 +67,18 @@ function updateMe(new_data) {
   xScale
   .domain(new_data.map((d) =>
    d.name))
-   
-   
-   
-  
-  //maak de assen
+
+   //xScale.attr("transform", "translate(-10,0)rotate(-45)")
+
+   //maak de assen
   drawXaxis
   .attr('transform', 'translate(0,' + height + ')')
   .transition()
   .call(xaxis)
+  .selectAll("text")
+  .attr("transform", "translate(-10,0)rotate(-45)")
+  .style("text-anchor", "end")
+  .attr("font-size", "16")
 
   drawYaxis
   .transition()
@@ -156,6 +159,20 @@ function() {
               if (checked == true) { // als er op de checkbox geklikt is en deze aangevinkt is
                   const high_percentage = data.filter((d) => 
                   d.abv <= 5)
+
+                  updateMe(high_percentage)
+              } else {
+                   updateMe(data)
+}
+});
+
+d3.select('#alcoholPercentageAlles').on('change', 
+function() {
+   
+           const checked = d3.select(this).property('checked')  // als de gebruiker op de checkbox klikt
+              if (checked == true) { // als er op de checkbox geklikt is en deze aangevinkt is
+                  const high_percentage = data.filter((d) => 
+                  d.abv >= 0)
 
                   updateMe(high_percentage)
               } else {

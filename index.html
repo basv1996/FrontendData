@@ -12,24 +12,19 @@
     <main>
         <h1>Data visualisatie - Frontend Data</h1>
         <h2>Krijg een willekeurig biertje</h2>
-        <!-- <div>
-  <strong>Filter:</strong>
-  <label>
-      <input type="checkbox" id="alcoholPercentage" />
-      Biertjes met meer dan 5% Alcohol</label>
-</div>
-<div>
-    <strong>Filter:</strong>
-    <label>
-        <input type="checkbox" id="alcoholPercentageMinder" />
-        Minder dan 5% Alcohol</label>
-  </div> -->
-
-  <div>
-    <input type="radio" id="alcoholPercentage" value="Boven de 5%">
-    <label for="boevn5%">Biertjes met meer dan 5% Alcohol</label><br>
-    <input type="radio" id="alcoholPercentageMinder" value="minder dan 5%">
-    <label for="minder">Minder dan 5%</label><br>
+   
+  <div><div>
+    <input type="radio" id="alcoholPercentage" name="percentage" value="Boven de 5%">
+    <label for="boevn5%">Biertjes met meer dan 5% Alcohol</label>
+    </div>
+    <div>
+    <input type="radio" id="alcoholPercentageMinder" name="percentage" value="minder dan 5%">
+    <label for="minder">Minder dan 5%</label>
+    </div>
+    <div>
+    <input type="radio" id="alcoholPercentageAlles" name="percentage" value="alles">
+    <label for="minder">Laat alles zien</label>
+    </div>
   </div>
   <div id="my_dataviz"></div>
         
