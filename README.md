@@ -3,11 +3,8 @@
 ## App Interface
 ![Interface van de app](https://github.com/basv1996/FrontendData/blob/master/wiki_img/Interface_barchart.png)
 
-
-
-
 ### Link naar de app
-:globe_with_meridians: [Link naar live app](https://fd-tt-basv.netlify.app/) 
+:globe_with_meridians: [Link naar live app](https://frontenddata-basv.netlify.app/) 
 
 
 ## Opdracht
@@ -28,7 +25,6 @@ Maak een gegevens visualisatie (met behulp van de d3-library) op basis van een g
 ## 📋 Concept
 
 Als idee heb ik om gegevens op te halen uit een API en deze te renderen in een chart. De chart die ik heb gekozen is een bar chart. Binnen deze bar chart wordt er getoond welke biertjes het hoogste alcohol percentage hebben.
-
 
 
 ## ⚙️ Installatie
@@ -54,7 +50,6 @@ Tijdens het vak Frontend data worden we beoordeld op de volgende punten:
 - Begrijpen van de materie
 - Kwaliteit
 - Proces
-
 
 </details>
 
